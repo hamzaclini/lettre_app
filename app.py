@@ -54,25 +54,29 @@ logo_path = os.path.join('images', 'logo.jpg')
 st.image(logo_path, width=180)  # Ajustez la largeur selon vos besoins
 
 # Titre de l'application
-st.title("Lettre d'évaluation psychologique pour un enfant")
+st.title("Lettre de perception du fonctionnement écologique")
 
 # Formulaire de soumission de la lettre
 with st.form("letter_form"):
     # Entrée de texte pour le nom complet de la personne évaluatrice avec un espace réservé
-    nom_eval = st.text_input("Nom de la personne évaluatrice:", placeholder="Écrivez votre nom")
+    nom_eval = st.text_input("Nom de l'observateur :", placeholder="Écrivez votre nom")
     # Entrée pour le nom de l'enfant
-    nom_enfant = st.text_input("Nom de l'enfant:", placeholder="Écrivez le nom de l'enfant")
-    prenom_eval = st.text_input("Prénom de l'enfant:", placeholder="Écrivez le prénom de l'enfant")
+    fun = st.text_input("Fonction de l'observateur :", placeholder="(enseignant, parent,...)")
+    place = st.text_input("Lieu d'observation  :", placeholder="(école, maison,...)")
+    nom_patient = st.text_input("Nom du patient :", placeholder="Écrivez le nom du patient")
+    prenom_patient = st.text_input("Prénom du patient :", placeholder="Écrivez le prénom du patient")
     # Zone de texte pour écrire la lettre
-    lettre = st.text_area("Écrivez votre lettre ici:", height=300)  # Hauteur de la zone de texte
+    lettre = st.text_area("Écrivez votre lettre ici :", height=300)  # Hauteur de la zone de texte
     
     # Bouton pour soumettre le formulaire
     soumis = st.form_submit_button("Envoyer la lettre")
     
     if soumis:
         user_data = {"lastName": nom_eval,
-                     'ch_lastName': nom_enfant,
-                     'ch_firstName': prenom_eval,}
+                     "function": fun,
+                     "place": place,
+                     'p_lastName': nom_patient,
+                     'p_firstName': prenom_patient}
         letter = lettre
 
         document = {
