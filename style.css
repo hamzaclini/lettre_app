@@ -1,0 +1,23 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.stTextInput>div>div>input, .stTextArea>div>div>textarea {
+    border-radius: 20px;
+    border: 1px solid #4CAF50;
+}
+
+.stButton>button {
+    border-radius: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+}
+
+.stMarkdown, .stAlert {
+    border-radius: 10px;
+    border: 1px solid #4CAF50;
+}
